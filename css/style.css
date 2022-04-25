@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+.navbar {
+  height: 100px;
+  width: 100%;
+  background-color: lightgray;
+  text-align: center;
+}
+.navbar h1 {
+  font-size: 30px;
+  font-family: cursive;
+}
+.navbar p {
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.game-box {
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: 25%;
+  position: relative;
+  margin-top: 10px;
+}
+table {
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+  border: 1px solid lightgray;
+}
+tr,
+td {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+td button {
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+  cursor: pointer;
+}
+.game-info {
+  text-align: center;
+  margin: 10px;
+}
