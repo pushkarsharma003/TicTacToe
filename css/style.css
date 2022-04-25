@@ -2,18 +2,20 @@ body {
   margin: 0;
 }
 .navbar {
-  height: 100px;
-  width: 100%;
-  background-color: lightgray;
+  min-height: 100px;
+  min-width: 100%;
+  border-bottom: 1px solid lightgray;
+  background-color: whitesmoke;
   text-align: center;
 }
 .navbar h1 {
-  font-size: 30px;
+  font-size: 24px;
   font-family: cursive;
 }
 .navbar p {
-  font-size: 10px;
+  font-size: 9px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: gray;
 }
 .game-box {
   max-height: 50%;
@@ -39,8 +41,46 @@ td button {
   width: 100%;
   font-size: 30px;
   cursor: pointer;
+  border: none;
+  background-color: whitesmoke;
 }
 .game-info {
   text-align: center;
   margin: 10px;
+}
+.player1_info {
+  color: darkred;
+}
+.player2_info {
+  color: darkblue;
+}
+.current_player_info {
+  color: red;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+.reset-btn {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  padding: 20px 20px;
+  background-color: dodgerblue;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+}
+.winner-display {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  color: red;
 }

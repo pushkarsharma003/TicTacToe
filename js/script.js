@@ -1,3 +1,7 @@
+document.querySelector(".app-info").textContent =
+  "last updated : 25 April, 2022 ::: Version : v0.2";
+document.querySelector(".dev-info").textContent =
+  "Developed by :: PUSHKAR SHARMA";
 let player1 = "";
 let player2 = "";
 let player1_values = "";
@@ -73,6 +77,7 @@ function victory_color_change() {
     if (final_values.includes(but[i].value)) {
       but[i].style.backgroundColor = "green";
       but[i].style.color = "white";
+      but[i].style.border = "2px solid whitesmoke";
     }
   }
 }
@@ -80,11 +85,14 @@ function victory_color_change() {
 function reloadWindow() {
   if (winner === "X") {
     victory_color_change();
-    alert("PLAYER 1 wins...");
+    document.querySelector(".winner-display").textContent =
+      "PLAYER 1 (X) wins...";
   } else if (winner === "O") {
     victory_color_change();
-    alert("PLAYER 2 wins...");
-  } else alert("Match draw!");
+    document.querySelector(".winner-display").textContent =
+      "PLAYER 2 (O) wins...";
+  } else document.querySelector(".winner-display").textContent = "Match Draw!";
+  document.querySelector(".overlay").style.display = "inline";
 }
 
 function game_logic() {
@@ -99,6 +107,8 @@ function game_logic() {
         but[i].textContent = player1;
         current_player = player2;
         document.querySelector(".current_turn").textContent = player2;
+        but[i].style.color = "darkred";
+        but[i].style.border = "2px solid darkred";
         // console.log("in player1");
         player1_values = player1_values + but[i].value;
         // console.log(player1_values);
@@ -113,6 +123,8 @@ function game_logic() {
         but[i].textContent = player2;
         current_player = player1;
         document.querySelector(".current_turn").textContent = player1;
+        but[i].style.color = "darkblue";
+        but[i].style.border = "2px solid darkblue";
         // console.log("in player2");
         player2_values = player2_values + but[i].value;
         // console.log(player2_values);

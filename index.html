@@ -10,20 +10,26 @@
   <body>
     <div class="navbar">
       <h1>TIC TAC TOE</h1>
-      <p>Developed by :: tbug003 Studios</p>
-      <p>Version : v0.1</p>
+      <p class="dev-info">?</p>
+      <p class="app-info">?</p>
     </div>
     <div class="game-box">
+      <div class="overlay">
+        <h1 class="winner-display">?</h1>
+        <button class="reset-btn" onclick="location.reload()">
+          RESET GAME
+        </button>
+      </div>
       <div class="game-info">
-        <div class="">
+        <div class="player1_info">
           <label for="">Player 1 is : </label>
           <span class="p1">?</span>
         </div>
-        <div class="">
+        <div class="player2_info">
           <label for="">Player 2 is : </label>
           <span class="p2">?</span>
         </div>
-        <div class="">
+        <div class="current_player_info">
           <label for="">Current turn : </label>
           <span class="current_turn">?</span>
         </div>
