@@ -1,5 +1,5 @@
 document.querySelector(".app-info").textContent =
-  "last updated : 25 April, 2022 ::: Version : v0.2";
+  "Last updated : 26 April, 2022 | Version : v0.3";
 document.querySelector(".dev-info").textContent =
   "Developed by :: PUSHKAR SHARMA";
 let player1 = "";
@@ -108,7 +108,7 @@ function game_logic() {
         current_player = player2;
         document.querySelector(".current_turn").textContent = player2;
         but[i].style.color = "darkred";
-        but[i].style.border = "2px solid darkred";
+        but[i].style.border = "1px solid darkred";
         // console.log("in player1");
         player1_values = player1_values + but[i].value;
         // console.log(player1_values);
@@ -124,7 +124,7 @@ function game_logic() {
         current_player = player1;
         document.querySelector(".current_turn").textContent = player1;
         but[i].style.color = "darkblue";
-        but[i].style.border = "2px solid darkblue";
+        but[i].style.border = "1px solid darkblue";
         // console.log("in player2");
         player2_values = player2_values + but[i].value;
         // console.log(player2_values);
