@@ -1,7 +1,7 @@
 document.querySelector(".app-info").textContent =
-  "Last updated : 26 April, 2022 | Version : v0.3";
+  "Last updated : 26 April, 2022 | Version : v0.4";
 document.querySelector(".dev-info").textContent =
-  "Developed by :: PUSHKAR SHARMA";
+  "Developed by : PUSHKAR SHARMA";
 let player1 = "";
 let player2 = "";
 let player1_values = "";

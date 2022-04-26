@@ -91,3 +91,188 @@ td button {
   color: whitesmoke;
   font-size: 20px;
 }
+
+@media (max-width: 319px) {
+  .game-box {
+    max-height: 60%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 90%;
+    margin-left: 3%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 50%;
+    left: 28%;
+    padding: 20px 20px;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+  .winner-display {
+    position: absolute;
+    top: 40%;
+    left: 18%;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .game-box {
+    max-height: 40%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 90%;
+    margin-left: 3%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    padding: 20px 20px;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+  .winner-display {
+    position: absolute;
+    top: 40%;
+    left: 22%;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .game-box {
+    max-height: 60%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 70%;
+    margin-left: 15%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    padding: 20px 20px;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+  .winner-display {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .game-box {
+    max-height: 60%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 60%;
+    margin-left: 20%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    padding: 20px 20px;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+  .winner-display {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .game-box {
+    max-height: 60%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .reset-btn {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    padding: 20px 20px;
+    background-color: dodgerblue;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+  }
+  .winner-display {
+    position: absolute;
+    top: 40%;
+    left: 43%;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1201px) {
+  .game-box {
+    max-height: 60%;
+    max-width: 100%;
+    margin-left: 2%;
+    position: relative;
+    margin-top: 10px;
+  }
+  table {
+    height: 50%;
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+}
