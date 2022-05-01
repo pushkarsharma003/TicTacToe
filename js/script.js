@@ -1,5 +1,5 @@
 document.querySelector(".app-info").textContent =
-  "Last updated : 26 April, 2022 | Version : v0.4";
+  "Last updated : 01 May, 2022 | Version : v0.5";
 document.querySelector(".dev-info").textContent =
   "Developed by : PUSHKAR SHARMA";
 let player1 = "";
@@ -7,7 +7,9 @@ let player2 = "";
 let player1_values = "";
 let player2_values = "";
 let winner = "";
+let winner_number = "";
 let final_values = [];
+let but = document.querySelectorAll(".btn");
 let victory_values = [
   [1, 2, 3],
   [4, 5, 6],
@@ -18,30 +20,37 @@ let victory_values = [
   [1, 5, 9],
   [3, 5, 7],
 ];
-let but = document.querySelectorAll(".btn");
-while (
-  player1 !== "X" ||
-  player1 !== "O" ||
-  player1 !== "x" ||
-  player1 !== "o"
-) {
-  player1 = prompt("player 1 :: enter X or O");
-  if (player1 === "X" || player1 === "O") {
-    break;
+
+function initialSelection() {
+  while (
+    player1 !== "X" ||
+    player1 !== "O" ||
+    player1 !== "x" ||
+    player1 !== "o"
+  ) {
+    player1 = prompt("player 1 :: enter X or O");
+    if (player1 === "X" || player1 === "O") {
+      break;
+    }
+    if (player1 === "x" || player1 === "o") {
+      player1 = player1.toUpperCase();
+      break;
+    }
   }
-  if (player1 === "x" || player1 === "o") {
-    player1 = player1.toUpperCase();
-    break;
+  if (player1 === "X") {
+    player2 = "O";
+  } else {
+    player2 = "X";
   }
 }
-if (player1 === "X") {
-  player2 = "O";
-} else {
-  player2 = "X";
+function displayPlayersInfo() {
+  document.querySelector(".p1").textContent = player1;
+  document.querySelector(".p2").textContent = player2;
+  document.querySelector(".current_turn").textContent = player1;
 }
-document.querySelector(".p1").textContent = player1;
-document.querySelector(".p2").textContent = player2;
-document.querySelector(".current_turn").textContent = player1;
+
+initialSelection();
+displayPlayersInfo();
 
 let current_player = player1;
 let count = 0;
@@ -86,19 +95,20 @@ function reloadWindow() {
   if (winner === "X") {
     victory_color_change();
     document.querySelector(".winner-display").textContent =
-      "PLAYER 1 (X) wins...";
+      winner_number + " ( " + winner + " )" + " wins...";
   } else if (winner === "O") {
     victory_color_change();
     document.querySelector(".winner-display").textContent =
-      "PLAYER 2 (O) wins...";
-  } else document.querySelector(".winner-display").textContent = "Match Draw!";
+      winner_number + " ( " + winner + " )" + " wins...";
+  } else if (winner === "N")
+    document.querySelector(".winner-display").textContent = "Match Draw!";
   document.querySelector(".overlay").style.display = "inline";
 }
 
 function game_logic() {
   for (let i = 0; i < but.length; i++) {
     but[i].addEventListener("click", function () {
-      if (player1_values.length === 5) {
+      if (player1_values.length === 5 || player2_values.length === 5) {
         winner = "N";
         reloadWindow();
         return;
@@ -116,6 +126,8 @@ function game_logic() {
           if (vic_check(player1_values)) {
             // console.log("player1 wins");
             winner = player1;
+            if (winner === player1) winner_number = "Player 1";
+            else if (winner === player2) winner_number = "Player 2";
             reloadWindow();
           }
         }
@@ -132,6 +144,7 @@ function game_logic() {
           if (vic_check(player2_values)) {
             // console.log("player2 wins");
             winner = player2;
+            winner_number = "Player 2";
             reloadWindow();
           }
         }
@@ -140,3 +153,25 @@ function game_logic() {
   }
 }
 game_logic();
+
+function resetGame() {
+  for (let i = 0; i < but.length; i++) {
+    but[i].style.backgroundColor = "beige";
+    but[i].style.color = "black";
+    but[i].style.border = "none";
+    but[i].textContent = "?";
+  }
+  player1 = "";
+  player2 = "";
+  player1_values = "";
+  player2_values = "";
+  winner = "";
+  winner_number = "";
+  final_values = [];
+  count = 0;
+  document.querySelector(".overlay").style.display = "none";
+  initialSelection();
+  displayPlayersInfo();
+
+  game_logic();
+}
