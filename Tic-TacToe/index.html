@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="player-check-div">
+      <span class="start-again">
+        <button id="start-again-btn" onclick="resetGame()">RESET GAME</button>
+      </span>
+      <span class="player-0-div active">Player 0</span>
+
+      <span class="player-1-div">Player X</span>
+    </div>
+    <div class="container center">
+      <div class="block-div">
+        <div class="selection-block">
+          <button id="select-1" class="selection-btn" value="1">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-2" class="selection-btn" value="2">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-3" class="selection-btn" value="3">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-4" class="selection-btn" value="4">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-5" class="selection-btn" value="5">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-6" class="selection-btn" value="6">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-7" class="selection-btn" value="7">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-8" class="selection-btn" value="8">select</button>
+        </div>
+        <div class="selection-block">
+          <button id="select-9" class="selection-btn" value="9">select</button>
+        </div>
+      </div>
+    </div>
+    <div class="alert-overlay hidden" onclick="resetGame()">
+      <div class="alert-tile hidden"></div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

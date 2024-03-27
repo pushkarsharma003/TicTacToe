@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: lightyellow;
+}
+.center {
+  position: absolute;
+  top: 8%;
+  left: 25%;
+}
+.container {
+  border-radius: 10px;
+  height: 500px;
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-div {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.selection-block {
+  height: 98px;
+  width: 98px;
+  border: 1px solid lightcyan;
+}
+.selection-block button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: brown;
+}
+.selection-block button:hover {
+  font-size: 20px;
+  background-color: lightblue;
+}
+.player-check-div {
+  height: 10%;
+  width: 100%;
+  display: flex;
+}
+.player-0-div,
+.player-1-div {
+  width: 50%;
+  background-color: lightgray;
+  border: 2px solid gray;
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+}
+.start-again {
+  width: 30%;
+}
+#start-again-btn {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: wheat;
+  background-color: goldenrod;
+  font-weight: bold;
+  cursor: pointer;
+}
+#start-again-btn:hover {
+  font-size: 16px;
+}
+.active {
+  background-color: lightgreen;
+  color: green;
+  border: 2px solid green;
+}
+.selection-done {
+  font-size: 30px;
+  background-color: lightgray;
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+.win-color {
+  background-color: greenyellow;
+}
+
+.alert-tile {
+  height: 10%;
+  width: 40%;
+  border: 1px solid red;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  z-index: 2;
+  text-align: center;
+  background-color: brown;
+  color: wheat;
+  font-size: 45px;
+}
+.win-tile {
+  border: 1px solid green;
+  background-color: lightgreen;
+  color: green;
+}
+.alert-overlay {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
