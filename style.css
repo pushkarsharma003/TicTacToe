@@ -20,7 +20,7 @@ body {
   justify-content: center;
 }
 .block-div {
-  background-color: white;
+  background-color: #f5eef8;
   height: 300px;
   width: 300px;
   display: flex;
@@ -30,17 +30,16 @@ body {
 .selection-block {
   height: 98px;
   width: 98px;
-  border: 1px solid #f4ecf7;
+  border: 1px solid #f5eef8;
 }
 .selection-block button {
   height: 100%;
   width: 100%;
   border: none;
   cursor: pointer;
-  color: brown;
+  color: blueviolet;
 }
 .selection-block button:hover {
-  font-size: 20px;
   background-color: lightblue;
 }
 .player-check-div {
@@ -118,9 +117,45 @@ body {
   bottom: 0;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
   .center {
-    position: absolute;
+    top: 2%;
+    left: 10%;
+  }
+  .container {
+    width: 80%;
+  }
+  .block-div {
+    background-color: white;
+    height: 246px;
+    width: 246px;
+  }
+  .selection-block {
+    height: 80px;
+    width: 80px;
+    border: 1px solid lightcyan;
+  }
+  .start-again {
+    width: 40%;
+  }
+  #start-again-btn {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .player-0-div,
+  .player-1-div {
+    font-size: 12px;
+  }
+  .alert-tile {
+    height: 5%;
+    width: 40%;
+    font-size: 25px;
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .center {
     top: 2%;
     left: 10%;
   }
@@ -139,11 +174,13 @@ body {
   }
 
   #start-again-btn {
-    font-size: 12px;
+    font-size: 10px;
+    padding: 5px;
   }
   .player-0-div,
   .player-1-div {
     font-size: 12px;
+    padding: 4px;
   }
   .alert-tile {
     height: 5%;
