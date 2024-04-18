@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background-color: lightyellow;
+  background-color: #f4ecf7;
 }
 .center {
   position: absolute;
@@ -30,7 +30,7 @@ body {
 .selection-block {
   height: 98px;
   width: 98px;
-  border: 1px solid lightcyan;
+  border: 1px solid #f4ecf7;
 }
 .selection-block button {
   height: 100%;
@@ -52,7 +52,7 @@ body {
 .player-1-div {
   width: 50%;
   background-color: lightgray;
-  border: 2px solid gray;
+  border: 1px solid gray;
   color: gray;
   font-size: 20px;
   text-align: center;
@@ -64,9 +64,8 @@ body {
   height: 100%;
   width: 100%;
   border: none;
-  color: wheat;
-  background-color: goldenrod;
-  font-weight: bold;
+  color: white;
+  background-color: blueviolet;
   cursor: pointer;
 }
 #start-again-btn:hover {
@@ -75,7 +74,7 @@ body {
 .active {
   background-color: lightgreen;
   color: green;
-  border: 2px solid green;
+  border: 1px solid green;
 }
 .selection-done {
   font-size: 30px;
@@ -117,4 +116,39 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .center {
+    position: absolute;
+    top: 2%;
+    left: 10%;
+  }
+  .container {
+    width: 80%;
+  }
+  .block-div {
+    background-color: white;
+    height: 246px;
+    width: 246px;
+  }
+  .selection-block {
+    height: 80px;
+    width: 80px;
+    border: 1px solid lightcyan;
+  }
+
+  #start-again-btn {
+    font-size: 12px;
+  }
+  .player-0-div,
+  .player-1-div {
+    font-size: 12px;
+  }
+  .alert-tile {
+    height: 5%;
+    width: 40%;
+    font-size: 25px;
+    padding: 5px;
+  }
 }
