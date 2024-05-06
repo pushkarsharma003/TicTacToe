@@ -2,17 +2,42 @@
 
 let currentPlayer = "0";
 let winner = "";
+let player1Color;
+let player0Color;
 let gameWinBlocks = ["159", "357", "147", "123", "369", "789", "258", "456"];
 const selectionButton = document.querySelectorAll(".selection-btn");
 let countSelectedBlocks;
 const alertTile = document.querySelector(".alert-tile");
 const alertOverlay = document.querySelector(".alert-overlay");
-
+const playerColorSelectDiv = document.querySelector(".player-color-select-div");
+const playerCheckDiv = document.querySelector(".player-check-div");
+const container = document.querySelector(".container");
+const darkOrangeBtn = document.querySelector(".dark-orange-btn");
+const darkOrchidBtn = document.querySelector(".dark-orchid-btn");
 //color the winning blocks
 const colorWinBlocks = function (pos1, pos2, pos3) {
   document.getElementById(`select-${pos1}`).classList.add("win-color");
   document.getElementById(`select-${pos2}`).classList.add("win-color");
   document.getElementById(`select-${pos3}`).classList.add("win-color");
+};
+
+//set player color
+const setPlayerColor = () => {
+  darkOrangeBtn.addEventListener("click", () => {
+    player0Color = "darkorange";
+    player1Color = "darkorchid";
+    playerColorSelectDiv.classList.add("hidden");
+    container.classList.remove("hidden");
+    playerCheckDiv.classList.remove("hidden");
+  });
+
+  darkOrchidBtn.addEventListener("click", () => {
+    player0Color = "darkorchid";
+    player1Color = "darkorange";
+    playerColorSelectDiv.classList.add("hidden");
+    container.classList.remove("hidden");
+    playerCheckDiv.classList.remove("hidden");
+  });
 };
 
 //check for winning positions
@@ -90,9 +115,9 @@ const changePlayer = function (current) {
 
 const getPlayerColor = (player) => {
   //if player is 0
-  if (player === "0") return "darkorchid";
+  if (player === "0") return player0Color;
   // if player is X
-  else if (player === "1" || player === "X") return "darkorange";
+  else if (player === "1" || player === "X") return player1Color;
 };
 
 //set visuals of selected selection button
@@ -129,6 +154,7 @@ const setGameOverVisuals = () => {
 //game starting function
 const startGame = function () {
   countSelectedBlocks = 0;
+  setPlayerColor();
   for (let i = 0; i < selectionButton.length; i++) {
     selectionButton[i].addEventListener("click", function () {
       let current = currentPlayer;

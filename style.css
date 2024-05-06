@@ -65,11 +65,8 @@ body {
   width: 100%;
   border: none;
   color: white;
-  background-color: blueviolet;
+  background-color: darkviolet;
   cursor: pointer;
-}
-#start-again-btn:hover {
-  font-size: 16px;
 }
 .active {
   background-color: lightgreen;
@@ -110,6 +107,48 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+.player-color-select-div {
+  width: 50%;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  z-index: 2;
+  border: 1px solid lightgray;
+}
+.player-color-select-div h1 {
+  text-align: center;
+  color: gray;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.player-color-select-div p {
+  text-align: center;
+  font-size: 18px;
+}
+.player-color-select {
+  display: flex;
+  flex-direction: column;
+}
+.dark-orange-btn {
+  background-color: darkorange;
+}
+.dark-orchid-btn {
+  background-color: darkorchid;
+}
+.dark-orange-btn,
+.dark-orchid-btn {
+  width: 40%;
+  margin-left: 30%;
+  color: white;
+  border: none;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  cursor: pointer;
+  padding: 1%;
+}
+.version-info {
+  color: gray;
 }
 
 @media screen and (min-width: 250px) and (max-width: 576px) {
@@ -153,6 +192,13 @@ body {
   .player-0-div,
   .player-1-div {
     width: 100%;
+  }
+  .player-color-select-div {
+    width: 90%;
+    left: 5%;
+  }
+  .player-color-select-div h1 {
+    font-size: 20px;
   }
 }
 
