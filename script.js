@@ -4,6 +4,7 @@ let currentPlayer = "0";
 let winner = "";
 let gameWinBlocks = ["159", "357", "147", "123", "369", "789", "258", "456"];
 const selectionButton = document.querySelectorAll(".selection-btn");
+let countSelectedBlocks;
 
 //color the winning blocks
 const colorWinBlocks = function (pos1, pos2, pos3) {
@@ -58,8 +59,15 @@ const setActivePlayer = function (current, previous) {
     .classList.add("active");
 
   document
+    .querySelector(`.player-${Number(current)}-div`)
+    .classList.remove("hidden");
+
+  document
     .querySelector(`.player-${Number(previous)}-div`)
     .classList.remove("active");
+  document
+    .querySelector(`.player-${Number(previous)}-div`)
+    .classList.add("hidden");
 };
 
 //change the current player
@@ -80,10 +88,11 @@ const changePlayer = function (current) {
 
 //game starting function
 const startGame = function () {
-  let countSelectedBlocks = 0;
+  countSelectedBlocks = 0;
   for (let i = 0; i < selectionButton.length; i++) {
     selectionButton[i].addEventListener("click", function () {
       let current = currentPlayer;
+      // console.log(selectionButton[i].textContent);
       if (currentPlayer === "1") {
         selectionButton[i].textContent = "X";
       } else if (currentPlayer === "0") {
@@ -110,26 +119,35 @@ const startGame = function () {
         document.querySelector(".alert-overlay").classList.remove("hidden");
         document.querySelector(".alert-tile").classList.remove("hidden");
         document.querySelector(".alert-tile").classList.remove("win-tile");
+        countSelectedBlocks = 0;
       }
     });
   }
 };
 
-//start the game
-startGame();
-
 //resetting the game function
 const resetGame = function () {
   document.querySelector(".alert-overlay").classList.add("hidden");
   document.querySelector(".alert-tile").classList.add("hidden");
-  winner = "";
-  currentPlayer = "0";
-  document.querySelector(`.player-0-div`).classList.add("active");
-  document.querySelector(`.player-1-div`).classList.remove("active");
   for (let i = 0; i < selectionButton.length; i++) {
     selectionButton[i].disabled = false;
     selectionButton[i].textContent = "select";
     selectionButton[i].classList.remove("selection-done");
     selectionButton[i].classList.remove("win-color");
   }
+
+  document
+    .querySelector(`.player-${currentPlayer}-div`)
+    .classList.add("active");
+
+  if (winner !== "")
+    document
+      .querySelector(`.player-${winner === "X" ? "1" : "0"}-div`)
+      .classList.remove("active");
+
+  winner = "";
+  countSelectedBlocks = 0;
 };
+
+//start the game
+startGame();
