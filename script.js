@@ -5,6 +5,8 @@ let winner = "";
 let gameWinBlocks = ["159", "357", "147", "123", "369", "789", "258", "456"];
 const selectionButton = document.querySelectorAll(".selection-btn");
 let countSelectedBlocks;
+const alertTile = document.querySelector(".alert-tile");
+const alertOverlay = document.querySelector(".alert-overlay");
 
 //color the winning blocks
 const colorWinBlocks = function (pos1, pos2, pos3) {
@@ -86,6 +88,44 @@ const changePlayer = function (current) {
   setActivePlayer(currentPlayer, previous);
 };
 
+const getPlayerColor = (player) => {
+  //if player is 0
+  if (player === "0") return "darkorchid";
+  // if player is X
+  else if (player === "1" || player === "X") return "darkorange";
+};
+
+//set visuals of selected selection button
+const setSelectedVisuals = (selectedButtonNumber, player) => {
+  selectionButton[selectedButtonNumber].textContent =
+    player === "0" ? "0" : "X";
+  selectionButton[selectedButtonNumber].style.backgroundColor =
+    getPlayerColor(player);
+  selectionButton[selectedButtonNumber].style.color = "white";
+};
+
+//set visuals of winner
+const setWinnerVisuals = (winner) => {
+  alertTile.textContent = `Player ${winner} wins`;
+  alertTile.classList.remove("hidden");
+  alertTile.classList.add("win-tile");
+  alertTile.style.backgroundColor = getPlayerColor(winner);
+  alertTile.style.border = `1px solid ${getPlayerColor(winner)}`;
+  alertTile.style.color = "white";
+  alertOverlay.classList.remove("hidden");
+  countSelectedBlocks = 0;
+};
+
+const setGameOverVisuals = () => {
+  document.querySelector(".alert-tile").textContent = "Game Over";
+  document.querySelector(".alert-overlay").classList.remove("hidden");
+  document.querySelector(".alert-tile").classList.remove("hidden");
+  alertTile.style.color = "wheat";
+  alertTile.style.backgroundColor = "brown";
+  alertTile.style.border = "1px solid red";
+  countSelectedBlocks = 0;
+};
+
 //game starting function
 const startGame = function () {
   countSelectedBlocks = 0;
@@ -94,9 +134,9 @@ const startGame = function () {
       let current = currentPlayer;
       // console.log(selectionButton[i].textContent);
       if (currentPlayer === "1") {
-        selectionButton[i].textContent = "X";
+        setSelectedVisuals(i, currentPlayer);
       } else if (currentPlayer === "0") {
-        selectionButton[i].textContent = "0";
+        setSelectedVisuals(i, currentPlayer);
       }
       selectionButton[i].disabled = true;
       selectionButton[i].classList.add("selection-done");
@@ -105,21 +145,11 @@ const startGame = function () {
       countSelectedBlocks++;
 
       if (winner) {
-        document.querySelector(
-          ".alert-tile"
-        ).textContent = `Player ${winner} wins`;
-        document.querySelector(".alert-overlay").classList.remove("hidden");
-        document.querySelector(".alert-tile").classList.remove("hidden");
-        countSelectedBlocks = 0;
-        document.querySelector(".alert-tile").classList.add("win-tile");
+        setWinnerVisuals(winner);
       }
 
       if (countSelectedBlocks === 9 && winner === "") {
-        document.querySelector(".alert-tile").textContent = "Game Over";
-        document.querySelector(".alert-overlay").classList.remove("hidden");
-        document.querySelector(".alert-tile").classList.remove("hidden");
-        document.querySelector(".alert-tile").classList.remove("win-tile");
-        countSelectedBlocks = 0;
+        setGameOverVisuals();
       }
     });
   }
@@ -134,6 +164,8 @@ const resetGame = function () {
     selectionButton[i].textContent = "select";
     selectionButton[i].classList.remove("selection-done");
     selectionButton[i].classList.remove("win-color");
+    selectionButton[i].style.backgroundColor = "#d7bde2";
+    selectionButton[i].style.color = "blueviolet";
   }
 
   document
