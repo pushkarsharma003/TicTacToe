@@ -230,5 +230,5 @@ const resetGame = function () {
   countSelectedBlocks = 0;
 };
 
-//start the game
+//start the game function
 startGame();
