@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background-color: #f4ecf7;
+  background-color: whitesmoke;
 }
 .center {
   position: absolute;
@@ -20,7 +20,6 @@ body {
   justify-content: center;
 }
 .block-div {
-  background-color: #f5eef8;
   height: 300px;
   width: 300px;
   display: flex;
@@ -30,48 +29,63 @@ body {
 .selection-block {
   height: 98px;
   width: 98px;
-  border: 1px solid #f5eef8;
+  border: 1px solid whitesmoke;
 }
 .selection-block button {
   height: 100%;
   width: 100%;
   border: none;
   cursor: pointer;
-  color: blueviolet;
-  background-color: #d7bde2;
+  color: darkblue;
+  background-color: lightblue;
 }
 .selection-block button:hover {
-  background-color: lightblue;
+  background-color: lightskyblue;
 }
 .player-check-div {
   height: 10%;
   width: 100%;
   display: flex;
 }
-.player-0-div,
-.player-1-div {
-  width: 100%;
-  background-color: lightgray;
-  border: 1px solid gray;
-  color: gray;
+.O-div,
+.X-div {
+  width: 40%;
   font-size: 20px;
   text-align: center;
+  color: white;
+}
+.O-div {
+  background-color: darkorchid;
+  border: 1px solid darkorchid;
+}
+.X-div {
+  background-color: darkorange;
+  border: 1px solid darkorange;
 }
 .start-again {
-  width: 30%;
+  display: flex;
+  width: 20%;
 }
 #start-again-btn {
   height: 100%;
   width: 100%;
   border: none;
   color: white;
-  background-color: darkviolet;
+  background-color: dodgerblue;
+  cursor: pointer;
+}
+#mode-btn {
+  height: 100%;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: gray;
   cursor: pointer;
 }
 .active {
-  background-color: lightgreen;
-  color: green;
-  border: 1px solid green;
+  background-color: yellowgreen;
+  color: red;
+  border: 1px solid red;
 }
 .selection-done {
   font-size: 30px;
@@ -130,16 +144,16 @@ body {
   display: flex;
   flex-direction: column;
 }
-.dark-orange-btn {
+.x-select-btn {
   background-color: darkorange;
 }
-.dark-orchid-btn {
+.o-select-btn {
   background-color: darkorchid;
 }
-.dark-orange-btn,
-.dark-orchid-btn {
-  width: 40%;
-  margin-left: 30%;
+.x-select-btn,
+.o-select-btn {
+  width: 20%;
+  margin-left: 40%;
   color: white;
   border: none;
   margin-top: 1%;
@@ -149,8 +163,17 @@ body {
 }
 .version-info {
   color: gray;
+  text-align: center;
+}
+.footer {
+  background-color: whitesmoke;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid lightgray;
 }
 
+/* set responsiveness to screen size */
 @media screen and (min-width: 250px) and (max-width: 576px) {
   .center {
     top: 2%;
@@ -176,8 +199,8 @@ body {
     font-size: 10px;
     padding: 5px;
   }
-  .player-0-div,
-  .player-1-div {
+  .O-div,
+  .X-div {
     font-size: 12px;
   }
   .alert-tile {
@@ -185,13 +208,17 @@ body {
     font-size: 25px;
     padding: 5px;
   }
-  .player-check-div {
+  .active-check-div {
     flex-direction: column;
   }
   .start-again,
-  .player-0-div,
-  .player-1-div {
+  .O-div,
+  .X-div {
     width: 100%;
+  }
+  .player-check-div {
+    width: 100%;
+    flex-direction: column;
   }
   .player-color-select-div {
     width: 90%;
@@ -225,8 +252,8 @@ body {
     font-size: 10px;
     padding: 5px;
   }
-  .player-0-div,
-  .player-1-div {
+  .O-div,
+  .X-div {
     font-size: 12px;
     padding: 4px;
   }

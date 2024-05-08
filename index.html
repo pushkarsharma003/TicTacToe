@@ -9,10 +9,10 @@
   <body>
     <div class="player-color-select-div">
       <h1>Welcome to TIC TAC TOE</h1>
-      <p>Player 1, Choose your color</p>
+      <p>Player 1, Choose your symbol</p>
       <div class="player-color-select">
-        <button class="dark-orange-btn" id="dorchid-select">Dark Orange</button>
-        <button class="dark-orchid-btn" id="dorange-select">Dark Orchid</button>
+        <button class="x-select-btn" id="x-select">X</button>
+        <button class="o-select-btn" id="o-select">0</button>
       </div>
       <p class="version-info">version v0.7</p>
     </div>
@@ -20,9 +20,8 @@
       <span class="start-again">
         <button id="start-again-btn" onclick="resetGame()">RESET GAME</button>
       </span>
-      <span class="player-0-div active">Player 0 Select Your Box</span>
-
-      <span class="player-1-div hidden">Player X Select Your Box</span>
+      <span class="O-div"></span>
+      <span class="X-div"></span>
     </div>
     <div class="container center hidden">
       <div class="block-div">
@@ -58,6 +57,7 @@
     <div class="alert-overlay hidden" onclick="resetGame()">
       <div class="alert-tile hidden"></div>
     </div>
+    <div class="footer"></div>
     <script src="./script.js"></script>
   </body>
 </html>
